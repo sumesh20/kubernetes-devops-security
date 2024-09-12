@@ -8,5 +8,12 @@ pipeline {
               archive 'target/*.jar' //update desktop second  time
             }
         }   
+        stage('Unit tests') {
+            steps {
+              sh "mvn test"
+             
+            }
+        }   
+        
     }
 }
