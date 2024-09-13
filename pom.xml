@@ -79,7 +79,7 @@
 		<configuration>
 		<mutationThreshold>70</mutationThreshold>
 		<outputFormats>
-		<outputFormat><XML</outputFormat>
+		<outputFormat>XML</outputFormat>
 		<outputFormat>HTML</outputFormat>
 		</outputFormats>
 		</configuration>
