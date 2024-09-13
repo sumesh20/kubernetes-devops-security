@@ -28,6 +28,7 @@ pipeline {
               sh 'docker push sumesh20/numeric-app:""$GIT_COMMIT""'
              
             }
+         }
         
     }
 }
