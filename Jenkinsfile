@@ -20,7 +20,17 @@ pipeline {
                 }
             }
 
-        }   
+        } 
+         stage('Docker Build and Push') {
+            steps {
+              withDockerRegistry([credentialsId: "docker-hub",url: ""]) {
+              sh 'printenv'
+              sh 'docker build -t sumesh20/numeric-app:""$GIT_COMMIT"" .'
+              sh 'docker push sumesh20/numeric-app:""$GIT_COMMIT""'
+              
+              }
+            }
+         }  
          stage('Kubernetes Deployment - DEV') {
             steps {
               withKubeConfig([credentialsId: 'kubeconfig']) {
